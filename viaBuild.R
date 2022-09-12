@@ -196,7 +196,7 @@ viaBuild <- function(wd = "./",
         ylab("")+
         theme(legend.position = "none")
       print(draft)
-      ggsave(paste0(unique(interim$Time), "_plate.pdf"))
+      ggsave(paste0(unique(interim$Time), "_plate.png"), dpi=300)
     }
   }
 }
