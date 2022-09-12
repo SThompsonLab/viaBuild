@@ -193,7 +193,8 @@ viaBuild <- function(wd = "./",
         scale_fill_gradient(low = "blue", high = "pink")+
         theme_classic2()+
         xlab("")+
-        ylab("")
+        ylab("")+
+        theme(legend.position = "none")
       print(draft)
       ggsave(paste0(unique(interim$Time), "_plate.pdf"))
     }
