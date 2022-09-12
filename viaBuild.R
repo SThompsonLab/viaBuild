@@ -179,8 +179,11 @@ viaBuild <- function(wd = "./",
     ggsave("all_data_bar.svg")
   }
   if (plate_graph==T){
-    for (timer in unique(all_data$Time)){
-      interim <- all_data[all_data$Time == timer,]
+    for (timer in unique(all_data$Read_number)){
+      interim <- all_data[all_data$Read_number == timer,]
+      if (!exists("startingValue")){
+        startingValue <- median(interim$Reduction)
+      }
       interim$row <- substr(interim$Position, 1, 1)
       interim$column <- substr(interim$Position, 2, nchar(interim$Position))
       interim$column <- ordered(interim$column, levels = c("1", "2", "3", "4", "5", "6", "7", "8", "9", "10", "11", "12"))
@@ -190,7 +193,7 @@ viaBuild <- function(wd = "./",
                           x=column,
                           fill=Reduction))+
         geom_point(size = 20, shape = 21)+
-        scale_fill_gradient(low = "blue", high = "pink")+
+        scale_fill_gradient2(low = "blue", high = "pink", mid = "#8203fdff", midpoint = startingValue)+
         theme_classic2()+
         xlab("")+
         ylab("")+
