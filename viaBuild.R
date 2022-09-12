@@ -189,7 +189,7 @@ viaBuild <- function(wd = "./",
                       aes(y = rev(row),
                           x=column,
                           fill=Reduction))+
-        geom_point(size = 14, shape = 21)+
+        geom_point(size = 20, shape = 21)+
         scale_fill_gradient(low = "blue", high = "pink")+
         theme_classic2()+
         xlab("")+
