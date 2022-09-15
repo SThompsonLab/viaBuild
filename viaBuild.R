@@ -244,7 +244,7 @@ viaBuild <- function(wd = "./",
                          add = "mean_sd", 
                          position = position_dodge(0.8))+
         ylab(paste0("Reduction (Relative to ", norm_conc, ")"))+
-        xlab("Read time (hours)")+
+        xlab("Concentration")+
         geom_hline(yintercept = 100, linetype = 2, size = 2, color = "red")+
         theme_classic2()
     } else {
@@ -268,7 +268,7 @@ viaBuild <- function(wd = "./",
                          add = "mean_sd", 
                          position = position_dodge(0.8))+
         ylab(paste0("Absolute reduction"))+
-        xlab("Read time (hours)")+
+        xlab("Concentration")+
         theme_classic2()
     }
     
